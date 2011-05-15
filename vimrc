@@ -10,6 +10,9 @@ set background=dark
 set ve=all
 set wildmenu
 
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 map <F7> :NERDTreeToggle<CR>
 map <F1> :cd wtelecom/edemocracia/trunk/web/src/<CR>
 map <F2> <ESC>iimport ipdb; ipdb.set_trace()<CR><ESC>
