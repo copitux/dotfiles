@@ -6,6 +6,7 @@ autocmd BufRead,BufNewFile *.py set ai
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 
 set nocompatible
+filetype plugin on
 set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 set hlsearch
 set incsearch
