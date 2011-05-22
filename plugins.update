@@ -1,0 +1,6 @@
+#/usr/bin/env shell
+
+git clone git://github.com/altercation/vim-colors-solarized.git bundle/vim-colors-solarized/
+git clone http://github.com/tpope/vim-repeat bundle/vim-repeat
+git clone http://github.com/msanders/snipmate.vim bundle/vim-snipmate
+git clone http://github.com/tpope/vim-surround bundle/vim-surround
