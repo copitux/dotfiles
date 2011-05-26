@@ -6,8 +6,10 @@ autocmd BufRead,BufNewFile *.py set ai
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 
 set nocompatible
+filetype off
 filetype plugin on
 set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+set autoindent
 set hlsearch
 set incsearch
 set cpoptions+=$
@@ -27,7 +29,7 @@ colorscheme solarized
 if has('gui_running')
     
     set guifont=Inconsolata\ 11
-    set lines=45 columns=194
+    set lines=45 columns=174
     set guioptions-=T
     set guioptions-=m
     set guioptions-=L
@@ -37,6 +39,13 @@ endif
 
 " -------------------------------------------------------------------------------------------------
 "   Maps, alias ...
+
+nnoremap j gj
+nnoremap k gk
+cmap W w                        
+cmap WQ wq
+cmap wQ wq
+cmap Q q
 
 map <F7> :NERDTreeToggle<CR>
 map <F1> :cd wtelecom/edemocracia/trunk/web/src/<CR>
