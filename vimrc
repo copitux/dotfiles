@@ -13,9 +13,6 @@ set cpoptions+=$
 set ve=all
 set wildmenu
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 
 " -------------------------------------------------------------------------------------------------
@@ -23,7 +20,7 @@ autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,ex
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme desert
 
 if has('gui_running')
     
@@ -41,16 +38,3 @@ endif
 
 nnoremap j gj
 nnoremap k gk
-map <C-L> <C-W>l<C-W>_
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-H> <C-W>h<C-W>_
-cmap W w                        
-cmap WQ wq
-cmap wQ wq
-cmap Q q
-cmap Tabe tabe
-
-map <F7> :NERDTreeToggle<CR>
-map <F1> :cd wtelecom/edemocracia/trunk/web/src/<CR>
-map <F2> <ESC>iimport ipdb; ipdb.set_trace()<CR><ESC>
