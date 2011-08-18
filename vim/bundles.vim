@@ -1,5 +1,4 @@
 set nocompatible
-filetype off
 filetype plugin indent on
 
 set rtp+=~/.vim/bundle/vundle
@@ -9,3 +8,5 @@ Bundle 'gmarik/vundle'
 Bundle 'surround.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'python_match.vim'
+Bundle 'snipMate'
+Bundle 'robhudson/snipmate_for_django'
