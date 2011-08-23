@@ -5,20 +5,29 @@ set statusline=%f\ %2*%m\ %1*%h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?
 set statusline+='%<\ %f\ %{fugitive#statusline()}'
 set laststatus=2
 set ruler
-set number
 set ts=4 et sw=4 sts=4
 set hlsearch
 set incsearch
 set cpoptions+=$
 set wildmenu
+set encoding=utf-8
+set backupdir=$HOME/.vim/bakup
+
+" view trainling whitespaces and tabs
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.,eol:¬
+" disable some for html
+autocmd filetype html,xml set listchars-=tab:>.
 
 "Python
 au FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 au FileType python set ts=4 et sw=4 sts=4
 au FileType python normal m`:%s/\s\+$//e``
+au BufNewFile *.py so $HOME/.vim/file_headers/py_header.txt "TODO: why buf and not file?
 
 "Django
 au FileType htmldjango set ft=htmldjango.html "ts=2 et sw=2 sts=2
+au FileType python set ft=python.django "ts=2 et sw=2 sts=2
 
 " Surround mapping (https://code.djangoproject.com/wiki/UsingVimWithDjango#SurroundMappings)
 let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
@@ -45,15 +54,6 @@ if has('gui_running')
 endif
 
 " Alias
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap <F1> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap j gj
 nnoremap k gk
 nnoremap <c-h> <c-w>h

@@ -96,7 +96,7 @@ function set_prompt {
 
   git_prompt="$(parse_git_branch)"
 
-  export PS1="[\w] ${git_prompt}${COLOR_NONE}${homebrew_prompt}\$ "
+  export PS1="${RED}(${VIRTUAL_ENV#$WORKON_HOME/})${COLOR_NONE} [\w] ${git_prompt}${COLOR_NONE}${homebrew_prompt}\$ "
 
   # Domain is stripped from hostname
   case $HOSTNAME in
