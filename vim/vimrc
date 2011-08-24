@@ -1,8 +1,8 @@
 " Globals and plugins
 source ~/.vim/bundles.vim
 
-set statusline=%f\ %2*%m\ %1*%h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}\ %{getfperm(@%)}]\ 0x%B\ %12.(%c:%l/%L%)
-set statusline+='%<\ %f\ %{fugitive#statusline()}'
+set statusline=%f\ %1*%m\%*%h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}\]\ %12.(%c:%l/%L%)
+set statusline+=%<\ %{fugitive#statusline()}
 set laststatus=2
 set ruler
 set ts=4 et sw=4 sts=4
