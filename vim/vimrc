@@ -11,7 +11,7 @@ set incsearch
 set cpoptions+=$
 set wildmenu
 set encoding=utf-8
-set backupdir=$HOME/.vim/bakup
+set backupdir=$HOME/.vim/backup
 
 " view trainling whitespaces and tabs
 set list

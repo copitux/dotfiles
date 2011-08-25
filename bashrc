@@ -27,3 +27,7 @@ alias lall='ls -laRG | less'
 # git://github.com/adamv/dotfiles.git
 
 source $DOTFILES/prompt.bash
+
+# Virtualenvwrapper
+export WORKON_HOME=$HOME/.envs
+source /usr/local/bin/virtualenvwrapper.sh
