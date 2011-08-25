@@ -9,4 +9,4 @@
   co = checkout
   br = branch
   plog = log --stat
-  slog = log --pretty=online
+  slog = log --pretty=oneline
