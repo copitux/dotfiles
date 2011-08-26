@@ -28,6 +28,8 @@ au BufNewFile *.py so $HOME/.vim/file_headers/py_header.txt "TODO: why buf and n
 "Django
 au FileType htmldjango set ft=htmldjango.html "ts=2 et sw=2 sts=2
 au FileType python set ft=python.django "ts=2 et sw=2 sts=2
+au BufRead *models.py set foldmethod=indent
+au BufRead *views.py set foldmethod=indent
 
 " Surround mapping (https://code.djangoproject.com/wiki/UsingVimWithDjango#SurroundMappings)
 let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
@@ -42,7 +44,7 @@ set background=dark
 colorscheme desert 
 
 if has('gui_running')
-    set guifont=Inconsolata\ 11
+    set guifont=Droid\ Sans\ Mono\ 10
     if has('mac')
         set guifont=Monaco:h14
     endif
