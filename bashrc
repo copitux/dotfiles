@@ -17,12 +17,6 @@ elif [[ $SYSTEM =~ .*Linux.* ]]; then
     source $DOTFILES/linux.bash
 fi
 
-# Aliases
-
-alias ls='ls -G'
-alias la='ls -laG'
-alias lall='ls -laRG | less'
-
 # Git prompt with steroids
 # git://github.com/adamv/dotfiles.git
 
