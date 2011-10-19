@@ -17,6 +17,14 @@ elif [[ $SYSTEM =~ .*Linux.* ]]; then
     source $DOTFILES/linux.bash
 fi
 
+# Global alias
+
+mkpymod() {
+    mkdir $1
+    touch $1/__init__.py
+    cd $1
+}
+
 # Git prompt with steroids
 # git://github.com/adamv/dotfiles.git
 
