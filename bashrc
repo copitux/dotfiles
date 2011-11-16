@@ -34,3 +34,5 @@ source $DOTFILES/prompt.bash
 export WORKON_HOME=$HOME/.envs
 source /usr/local/bin/virtualenvwrapper.sh
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+
+source $HOME/.bash_aliases

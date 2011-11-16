@@ -12,6 +12,7 @@ set cpoptions+=$
 set wildmenu
 set encoding=utf-8
 set backupdir=$HOME/.vim/backup
+let mapleader = ","
 
 " view trainling whitespaces and tabs
 set list
@@ -22,14 +23,13 @@ autocmd filetype html,xml set listchars-=tab:>.
 "Python
 au FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 au FileType python set ts=4 et sw=4 sts=4
-au FileType python normal m`:%s/\s\+$//e``
+"au FileType python normal m`:%s/\s\+$//e``
 au BufNewFile *.py so $HOME/.vim/file_headers/py_header.txt "TODO: why buf and not file?
+au BufNewFile,BufRead *.py compiler nose
 
 "Django
-au FileType htmldjango set ft=htmldjango.html "ts=2 et sw=2 sts=2
+au FileType htmldjango set ft=htmldjango.html ts=2 et sw=2 sts=2
 au FileType python set ft=python.django "ts=2 et sw=2 sts=2
-au BufRead *models.py set foldmethod=indent
-au BufRead *views.py set foldmethod=indent
 
 " Surround mapping (https://code.djangoproject.com/wiki/UsingVimWithDjango#SurroundMappings)
 let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
@@ -41,14 +41,15 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
 " Colors
 syntax on
 set background=dark
-colorscheme desert 
+colorscheme desert
 
 if has('gui_running')
     set guifont=Droid\ Sans\ Mono\ 10
     if has('mac')
         set guifont=Monaco:h14
+        set vb t_vb=
     endif
-    set lines=45 columns=174
+    set lines=44 columns=179
     set guioptions-=T
     set guioptions-=m
     set guioptions-=L
