@@ -5,6 +5,7 @@
 
 export EDITOR='vim'
 export GIT_EDITOR=$EDITOR
+set -o vi
 SYSTEM=`uname -a`
 DOTFILES=$HOME/.dotfiles
 
