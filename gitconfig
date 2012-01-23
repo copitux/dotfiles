@@ -1,0 +1,12 @@
+[user]
+  name = David Medina
+  email = davidmedina9@gmail.com
+[color]
+  ui = true
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  plog = log --stat
+  slog = log --pretty=oneline
