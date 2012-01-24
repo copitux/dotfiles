@@ -6,7 +6,7 @@ alias l="ls"
 alias lla="ls -a -l"
 alias lm='ls -la | less'
 mkpymod() {
-    mkdir $1
-    touch $1/__init__.py
-    cd $1
+  mkdir $1
+  touch $1/__init__.py
+  cd $1
 }

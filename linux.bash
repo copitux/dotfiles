@@ -17,3 +17,9 @@ fi
 if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
   . /usr/local/bin/virtualenvwrapper.sh 
 fi
+
+# Alias
+joinvideo() {
+  # joinvideo out.avi uno.avi dos.avi ...
+  mencoder -ovc copy -oac copy -o $*
+}
