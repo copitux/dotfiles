@@ -20,3 +20,5 @@ relink ~/.bashrc       $DIR/bashrc
 relink ~/.gitconfig    $DIR/gitconfig
 relink ~/.pip	       $DIR/pip 
 relink ~/.gitconfig    $DIR/gitconfig
+relink ~/.vimrc	       $DIR/vim/vimrc
+relink ~/.vim          $DIR/vim/vim
