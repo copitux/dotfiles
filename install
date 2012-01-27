@@ -15,10 +15,15 @@ relink() {
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
+echo 'Downloading requirements...'
+if [[ ! -e $DIR/bash_completion/django_admin ]]; then
+  echo '-> django_admin completion...'
+  curl -s 'https://raw.github.com/django/django/master/extras/django_bash_completion' > $DIR/bash_completion/django_admin
+fi
 relink ~/.bash_profile $DIR/bash_profile
 relink ~/.bashrc       $DIR/bashrc
 relink ~/.gitconfig    $DIR/gitconfig
-relink ~/.pip	       $DIR/pip 
+relink ~/.pip          $DIR/pip
 relink ~/.gitconfig    $DIR/gitconfig
-relink ~/.vimrc	       $DIR/vimrc
+relink ~/.vimrc        $DIR/vimrc
 relink ~/.vim          $DIR/vim

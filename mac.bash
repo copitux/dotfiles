@@ -8,6 +8,7 @@ if [[ -n `which brew` ]]; then
   if [[ -e $BREW_DIR/etc/bash_completion ]]; then
     ln -sf "$BREW_DIR/Library/Contributions/brew_bash_completion.sh" "$BREW_DIR/etc/bash_completion.d"
     ln -sf ~/.dotfiles/bash_completion/pip "$BREW_DIR/etc/bash_completion.d"
+    ln -sf ~/.dotfiles/bash_completion/django_admin "$BREW_DIR/etc/bash_completion.d"
     . $BREW_DIR/etc/bash_completion
   fi
 
