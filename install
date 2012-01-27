@@ -20,6 +20,14 @@ if [[ ! -e $DIR/bash_completion/django_admin ]]; then
   echo '-> django_admin completion...'
   curl -s 'https://raw.github.com/django/django/master/extras/django_bash_completion' > $DIR/bash_completion/django_admin
 fi
+if [[ ! -e $DIR/vim/bundle/vundle ]]; then
+  echo '-> Vundle...'
+  git clone git@github.com:gmarik/vundle.git $DIR/vim/bundle/vundle
+fi
+echo 'Vim plugins...'
+vim -u $DIR/vim/vundle.vim +BundleInstall +qall
+echo 'Vim plugin: Command-T compilation...'
+# ruby extconf.rb && make into command-t dir
 relink ~/.bash_profile $DIR/bash_profile
 relink ~/.bashrc       $DIR/bashrc
 relink ~/.gitconfig    $DIR/gitconfig
