@@ -17,10 +17,15 @@ Bundle 'bad-whitespace'
 " unexplored help
 Bundle 'surround.vim'
 Bundle 'repeat.vim'
+" snipMate related
+" - Dependencies
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+" - new continued snipMate
+Bundle "garbas/vim-snipmate"
+Bundle "snipmate-snippets"
 "Bundle 'fugitive.vim'
 "Bundle 'python_match.vim'
-"Bundle 'snipmate'
-"Bundle 'robhudson/snipmate_for_django'
 "Bundle 'ack.vim'
 "Bundle 'reinh/vim-makegreen'
 "Bundle 'pep8'

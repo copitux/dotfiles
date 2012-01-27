@@ -25,11 +25,12 @@ colorscheme jellybeans
 
 if has('gui_running')
     set guioptions=aegit
-    set vb t_vb=
     set lines=44 columns=179
     set guifont=Ubuntu\ Mono\ 12
+    set novb
     if has('mac')
         set guifont=Monaco:h14
+        set vb t_vb=
     endif
 endif
 
@@ -42,6 +43,7 @@ nn <c-k> <c-w>k
 nn <c-l> <c-w>l
 
 " AutoCommands
+au FileType python set ft=python.django
 au BufNewFile *.py so $HOME/.vim/file_headers/py_header.txt
 
 " Plugins configs
@@ -65,3 +67,7 @@ set completeopt=menuone,longest,preview
 
 " - EasyMotion
 let g:EasyMotion_leader_key = '.'
+
+" - snipmate
+let g:snips_author = "David Medina"
+let g:snips_trigger_key='<M-e>'
