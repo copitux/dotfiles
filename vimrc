@@ -76,15 +76,15 @@ let g:SuperTabCrClosePreview = 1
 set completeopt=menu,longest,preview
 
 " - EasyMotion
-let g:EasyMotion_leader_key = '.'
+let g:EasyMotion_leader_key = '<Leader>'
 let g:EasyMotion_keys = '.,-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
 
 " - Snipmate
 let g:snips_author = "David Medina"
-let g:snips_trigger_key='<F1>'
+let g:snips_trigger_key='<Leader>.'
 
 " - Pep8
-let g:pep8_map='<leader>.'
+let g:pep8_map='<leader>p'
 
 " - Surround
 let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"

@@ -21,6 +21,7 @@ Bundle 'pep8'
 Bundle 'pyflakes'
 Bundle 'pyflakes.vim'
 Bundle 'pydoc.vim'
+Bundle 'ZoomWin'
 " snipMate related
 " - Dependencies
 Bundle "MarcWeber/vim-addon-mw-utils"
