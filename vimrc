@@ -101,3 +101,7 @@ nn <silent> <leader>g :RopeGotoDefinition<CR>
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
 endif
+
+if filereadable($HOME . '/.vimrc_local')
+    so ~/.vimrc_local
+endif
