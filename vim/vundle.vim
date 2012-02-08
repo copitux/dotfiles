@@ -22,10 +22,10 @@ Bundle 'pyflakes'
 Bundle 'pyflakes.vim'
 Bundle 'pydoc.vim'
 Bundle 'ZoomWin'
+Bundle 'reinh/vim-makegreen'
 " snipMate related
 " - Dependencies
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 " - new continued snipMate
 Bundle "garbas/vim-snipmate"
-Bundle "snipmate-snippets"

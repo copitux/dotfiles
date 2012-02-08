@@ -1,0 +1,26 @@
+snippet #!
+	#!/usr/bin/env python
+snippet imp
+	import ${1}
+snippet from
+	from ${1} import ${2}
+snippet def
+	def ${1}(`indent('.') ? 'self' : ''`):
+		${2}
+snippet defs
+	def ${1}(`indent('.') ? 'self' : ''`, ${2:}):
+		${3}
+snippet pdb
+	import ipdb; ipdb.set_trace()
+snippet _
+	def __${1:init}__(self${2}):
+		${3}
+snippet cl
+	class ${1}(${2:object}):
+		${3}
+snippet clt
+	class Test${1}(TestCase):
+		${2}
+snippet deft
+	def test_${1}(self${2}):
+		${3}

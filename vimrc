@@ -62,6 +62,7 @@ let g:CommandTMaxDepth = 8
 let g:CommandTMaxHeight = 10
 set wildignore+=.git,.svn,*.pyc
 nnoremap <silent> <Leader><Leader> :CommandT<CR>
+nnoremap <silent> <Leader><Leader>b :CommandTBuffer<CR>
 
 " - Tagbar
 let g:tagbar_left = 1
@@ -71,20 +72,28 @@ let g:tagbar_expand = 0
 nn <silent> <F2> :TagbarOpen fj<CR>
 
 " - SuperTab
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-x><c-i>"
+"let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+"let g:SuperTabContextTextOmniPrecedence = ['&completefunc', '&omnifunc']
+"let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-i>"]
+"let g:SuperTabSetDefaultCompletionType = "<c-i>"
 let g:SuperTabCrClosePreview = 1
 set completeopt=menu,longest,preview
 
 " - EasyMotion
-let g:EasyMotion_leader_key = '<Leader>'
-let g:EasyMotion_keys = '.,-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+let g:EasyMotion_leader_key = '.'
+let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+
+" - Pyflakes.vim
+let g:pyflakes_use_quickfix = 0
 
 " - Snipmate
+"   Tagbar
 let g:snips_author = "David Medina"
-let g:snips_trigger_key='<Leader>.'
+"let g:snips_trigger_key=''
 
 " - Pep8
-let g:pep8_map='<leader>p'
+let g:pep8_map='<leader>8'
 
 " - Surround
 let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
@@ -97,6 +106,7 @@ let g:surround_{char2nr("v")} = "{{ \1 \r..*\r &\1\r }}"
 " - Ropevim
 so ~/.vim/ropevim.vim
 nn <silent> <leader>g :RopeGotoDefinition<CR>
+nn <silent> <leader>r :RopeRename<CR>
 
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
