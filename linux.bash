@@ -23,3 +23,6 @@ joinvideo() {
   # joinvideo out.avi uno.avi dos.avi ...
   mencoder -ovc copy -oac copy -o $*
 }
+rmpyc() {
+    find . -name "*.pyc" -exec rm -rf {} \;
+}
