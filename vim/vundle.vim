@@ -6,7 +6,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'wincent/Command-T'
 Bundle 'majutsushi/tagbar'
 Bundle 'The-NERD-Commenter'
@@ -29,3 +28,6 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 " - new continued snipMate
 Bundle "garbas/vim-snipmate"
+"colors
+Bundle 'nanotech/jellybeans.vim'
+Bundle "molokai"
