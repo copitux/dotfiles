@@ -14,6 +14,7 @@ Bundle 'EasyMotion'
 Bundle 'surround.vim'
 Bundle 'repeat.vim'
 Bundle 'fugitive.vim'
+Bundle 'matchit.zip'
 Bundle 'python_match.vim'
 Bundle 'ack.vim'
 Bundle 'pep8'
@@ -22,6 +23,7 @@ Bundle 'pyflakes.vim'
 Bundle 'pydoc.vim'
 Bundle 'ZoomWin'
 Bundle 'reinh/vim-makegreen'
+Bundle 'ZenCoding.vim'
 " snipMate related
 " - Dependencies
 Bundle "MarcWeber/vim-addon-mw-utils"
