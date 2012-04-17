@@ -10,3 +10,6 @@ mkpymod() {
   touch $1/__init__.py
   cd $1
 }
+rmpyc() {
+    find . -name "*.pyc" -exec rm -rf {} \;
+}
