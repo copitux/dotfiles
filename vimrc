@@ -27,7 +27,7 @@ set ai ts=4 sw=4 sta et sts=4
 set list
 set lcs=tab:>-,trail:.,nbsp:.,eol:¬
 set background=dark
-colorscheme jellybeans
+colorscheme molokai
 
 if has('gui_running')
     set guioptions=aegit
@@ -51,7 +51,7 @@ nn <Leader>s <ESC>:%s/\s\+$//<CR>
 
 " AutoCommands
 au FileType python set ft=python.django
-au FileType {html,xhtml} set ft=htmldjango.html
+au FileType {html,htmldjango} set ft=htmldjango.html
 au BufNewFile *.py so $HOME/.vim/file_headers/python.txt
 au FocusLost * :wa
 
@@ -107,6 +107,9 @@ let g:surround_{char2nr("v")} = "{{ \1 \r..*\r &\1\r }}"
 so ~/.vim/ropevim.vim
 nn <silent> <leader>g :RopeGotoDefinition<CR>
 nn <silent> <leader>r :RopeRename<CR>
+
+" - Zencondig
+let g:user_zen_leader_key = '<leader>.'
 
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
