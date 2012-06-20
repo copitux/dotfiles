@@ -23,7 +23,7 @@ if [[ ! -e $DIR/bash_completion/django_admin ]]; then
 fi
 if [[ ! -e $DIR/vim/bundle/vundle ]]; then
   echo '-> Vundle...'
-  git clone git://github.com/gmarik/vundle.git $DIR/vim/bundle/vundle
+  git clone https://github.com/gmarik/vundle.git $DIR/vim/bundle/vundle
 fi
 relink ~/.bash_profile $DIR/bash_profile
 relink ~/.bashrc       $DIR/bashrc
