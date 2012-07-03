@@ -80,7 +80,8 @@ let g:SuperTabCrClosePreview = 1
 set completeopt=menu,longest,preview
 
 " - EasyMotion
-let g:EasyMotion_leader_key = '-'
+let g:EasyMotion_mapping_f = 'f'
+let g:EasyMotion_mapping_F = 'F'
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
 
 " - Pyflakes.vim
