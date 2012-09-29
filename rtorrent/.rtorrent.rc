@@ -1,0 +1,42 @@
+download_rate = 500
+upload_rate = 10
+
+min_peers = 50
+max_peers = 500
+
+min_peers_seed = 10
+max_peers_seed = 100
+
+max_uploads = 2
+
+port_range = 6881-6999
+
+port_random = yes 
+
+check_hash = yes
+
+# encryption settings
+encryption = allow_incoming,enable_retry,prefer_plaintext
+
+use_udp_trackers = yes
+
+dht = auto
+dht_port = 6881
+peer_exchange = yes
+
+session = ~/rtorrent/.session
+
+directory = ~/rtorrent
+
+schedule = low_diskspace,5,60,close_low_diskspace=2048M
+
+schedule = watch_directory,5,5,"load_start=~/rtorrent/watch/*.torrent"
+schedule = watch_directory_2,5,5,"load_start=~/rtorrent/watch/music/*.torrent,d.set_directory=~/rtorrent/music/"
+schedule = watch_directory_3,5,5,"load_start=~/rtorrent/watch/video/*.torrent,d.set_directory=~/rtorrent/video/"
+schedule = watch_directory_4,5,5,"load_start=~/rtorrent/watch/books/*.torrent,d.set_directory=~/rtorrent/books/"
+schedule = untied_directory,5,5,stop_untied=
+
+schedule = throttle_1,01:00:00,24:00:00,download_rate=0
+schedule = throttle_1,01:00:00,24:00:00,upload_rate=0
+schedule = throttle_2,18:00:00,24:00:00,download_rate=100
+schedule = throttle_3,18:00:00,24:00:00,upload_rate=1

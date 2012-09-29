@@ -1,4 +1,5 @@
 ## Useful defaults from Ubuntu 11.04
+export PATH=~/Apps:$PATH
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -18,8 +19,14 @@ if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
   . /usr/local/bin/virtualenvwrapper.sh 
 fi
 
-# Alias
+# Alias
 joinvideo() {
   # joinvideo out.avi uno.avi dos.avi ...
   mencoder -ovc copy -oac copy -o $*
+}
+saveiso() {
+  wodim -v -eject dev=/dev/sg0 $*
+}
+makeiso() {
+  genisoimage -l -R -J -o $1.iso $2
 }
