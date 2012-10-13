@@ -33,3 +33,4 @@ Bundle "garbas/vim-snipmate"
 "colors
 Bundle 'nanotech/jellybeans.vim'
 Bundle "molokai"
+Bundle "Solarized"
