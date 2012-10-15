@@ -1,4 +1,3 @@
-## Useful defaults from Ubuntu 11.04
 export PATH=~/Apps:$PATH
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -12,6 +11,10 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
+for completion in ~/.dotfiles/bash_completion/*
+do
+    . $completion
+done
 #################################################
 
 # Virtualenv

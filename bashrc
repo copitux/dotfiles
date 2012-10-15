@@ -13,5 +13,5 @@ fi
 
 . ~/.dotfiles/prompt.bash 
 . ~/.dotfiles/bookmarks.bash
-. ~/.dotfiles/bash_alias.bash
-[[ -e ~/.bash_local.bash ]] && . ~/.bash_local.bash
+. ~/.dotfiles/bash.alias.bash
+[[ -e ~/.bash.local.bash ]] && . ~/.bash.local.bash
