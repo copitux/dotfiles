@@ -25,14 +25,13 @@ if [[ ! -e $DIR/vim/bundle/vundle ]]; then
   echo '-> Vundle...'
   git clone https://github.com/gmarik/vundle.git $DIR/vim/bundle/vundle
 fi
-relink ~/.bash_profile $DIR/bash_profile
-relink ~/.bashrc       $DIR/bashrc
-relink ~/.gitconfig    $DIR/gitconfig
-relink ~/.pip          $DIR/pip
-relink ~/.gitconfig    $DIR/gitconfig
-relink ~/.vimrc        $DIR/vimrc
-relink ~/.vim          $DIR/vim
+relink ~/.bash_profile      $DIR/bash_profile
+relink ~/.bashrc            $DIR/bashrc
+relink ~/.gitconfig         $DIR/gitconfig
+relink ~/.pip               $DIR/pip
+relink ~/.gitconfig         $DIR/gitconfig
+relink ~/.vimrc             $DIR/vim/vimrc
+relink ~/.vimrc.bundles     $DIR/vim/vimrc.bundles
+relink ~/.vim               $DIR/vim
 echo 'Vim plugins...'
-vim -u $DIR/vim/vundle.vim +BundleInstall +qall
-echo 'Vim plugin: Command-T compilation...'
-# ruby extconf.rb && make into command-t dir
+vim -u $DIR/vim/vimrc.bundles +BundleInstall +qall

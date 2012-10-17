@@ -1,0 +1,85 @@
+" Modified Steve 
+" Environment {
+    " Basics {
+        set nocompatible        " must be first line
+        set background=dark     " Assume a dark background
+    " }
+
+    " Windows Compatible {
+        " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
+        " across (heterogeneous) systems easier.
+        if has('win32') || has('win64')
+          set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+        endif
+    " }
+    "
+    " Setup Bundle Support {
+    " The next three lines ensure that the ~/.vim/bundle/ system works
+        filetype off
+        set rtp+=~/.vim/bundle/vundle
+        call vundle#rc()
+    " }
+
+" }
+
+" Bundles {
+
+    " Deeps {
+        Bundle 'gmarik/vundle'
+        Bundle 'MarcWeber/vim-addon-mw-utils'
+        Bundle 'tomtom/tlib_vim'
+    " }
+
+    " Base {
+        Bundle 'mileszs/ack.vim'
+        Bundle 'tpope/vim-surround'
+        Bundle 'tpope/vim-repeat'
+        Bundle 'matchit.zip'
+        Bundle 'kien/ctrlp.vim'
+        Bundle 'Lokaltog/vim-powerline'
+        Bundle 'ZoomWin'
+        Bundle 'majutsushi/tagbar'
+        Bundle 'tpope/vim-fugitive'
+        Bundle 'scrooloose/nerdcommenter'
+    " }
+
+    " Colors {
+        Bundle 'altercation/vim-colors-solarized'
+        Bundle 'tomasr/molokai'
+    " }
+
+    " Coding {
+        Bundle 'AutoClose'
+        Bundle 'ZenCoding.vim'
+        Bundle 'scrooloose/syntastic'
+        Bundle 'mattn/gist-vim'
+        Bundle 'Shougo/neocomplcache'
+        Bundle 'garbas/vim-snipmate'
+        Bundle 'honza/snipmate-snippets'
+    " }
+
+    " Python {
+        "Bundle 'klen/python-mode'
+        Bundle 'pythoncomplete'
+        Bundle 'python_match.vim'
+        Bundle 'python.vim'
+    " }
+
+    " Extra {
+        Bundle 'amirh/HTML-AutoCloseTag'
+        Bundle 'leshill/vim-json'
+        Bundle 'pangloss/vim-javascript'
+        Bundle 'spf13/vim-preview'
+        Bundle 'tpope/vim-markdown'
+        Bundle 'vim-scripts/sessionman.vim'
+        "Bundle 'godlygeek/csapprox' "gvim colors works good in term
+        "Bundle 'nathanaelkane/vim-indent-guides'
+        "Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+        "Bundle 'groenewege/vim-less'
+    " }
+
+" Use local bundles if available {
+    if filereadable(expand("~/.vimrc.bundles.local"))
+        source ~/.vimrc.bundles.local
+    endif
+" }
