@@ -45,6 +45,8 @@ snippet empty
 	{% empty %}
 	${1}
 snippet if
+	{% if ${1} %}{% endif %}
+snippet ifn
 	{% if ${1} %}
 	${2}
 	{% endif %}
@@ -73,6 +75,8 @@ snippet spaceless
 	{% spaceless %}${1}{% endspaceless %}
 snippet ssi
 	{% ssi ${1} %}
+snippet static
+	{% static "${1}" %}
 snippet trans
 	{% trans "${1:string}" %}
 snippet url

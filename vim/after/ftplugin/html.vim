@@ -1,2 +1,2 @@
-setlocal ts=2 sw=2 sta et sts=2
+setlocal ts=4 sw=4 sta et sts=4
 setlocal cc=120
