@@ -1,16 +1,12 @@
 alias ..='cd ..'
 alias ...='cd .. && cd ..'
-alias ll="ls -l -h"
-alias la="ls -a"
+alias ...='cd .. && cd .. && cd ..'
 alias l="ls"
-alias lla="ls -a -l"
-alias lm='ls -la | less'
-alias djproject='django-admin.py startproject --template=https://github.com/downloads/copitux/django-template/djt.tar.gz  $1'
+alias la="ls -la"
 
 mkpymod() {
   mkdir $1
   touch $1/__init__.py
-  cd $1
 }
 
 rmpyc() {

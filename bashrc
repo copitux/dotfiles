@@ -11,7 +11,7 @@ else
   . ~/.dotfiles/linux.bash
 fi
 
-. ~/.dotfiles/prompt.bash 
 . ~/.dotfiles/bookmarks.bash
-. ~/.dotfiles/bash.alias.bash
-[[ -e ~/.bash.local.bash ]] && . ~/.bash.local.bash
+. ~/.dotfiles/alias.bash
+[[ -e ~/.dotfiles/git-prompt ]] && . ~/.dotfiles/git-prompt/gitprompt.sh
+[[ -e ~/.bashrc.local ]] && . ~/.bashrc.local

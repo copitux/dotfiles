@@ -1,37 +1,42 @@
 #!/bin/bash
-# relink target-file source-file
-relink() {
-  if [[ -h "$1" ]]; then
-    echo "Relinking $1"
-    # Symbolic link? Then recreate.
-    rm "$1"
-    ln -sn "$2" "$1"
-  elif [[ ! -e "$1" ]]; then
-    echo "Linking $1 to $2"
-    ln -sn "$2" "$1"
-  else
-    echo "$1 exists as a real file, skipping."
-  fi
-}
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
+sudo apt-get update
+sudo apt-get install build-essential vim vim-gtk curl ack-grep guake aptitude
+
 echo 'Downloading requirements...'
 if [[ ! -e $DIR/bash_completion/django_admin ]]; then
-  echo '-> django_admin completion...'
+  echo '-> django_admin completion ...'
   curl -s 'https://raw.github.com/django/django/master/extras/django_bash_completion' > $DIR/bash_completion/django_admin
 fi
+if [[ ! -e $DIR/git-prompt/gitprompt.sh ]]; then
+  echo '-> Bash git prompt ...'
+  git clone https://github.com/magicmonty/bash-git-prompt.git $DIR/git-prompt
+fi
+if [[ ! -e $DIR/solarized/guake ]]; then
+  echo '-> Guake colors ...'
+  git clone https://github.com/coolwanglu/guake-colors-solarized.git $DIR/solarized/guake
+  $DIR/solarized/guake/set_dark.sh
+fi
+if [[ ! -e $DIR/solarized/gnome ]]; then
+  echo '-> Gnome colors ...'
+  git clone https://github.com/sigurdga/gnome-terminal-colors-solarized $DIR/solarized/gnome
+  $DIR/solarized/gnome/install.sh -s dark -p Solarized
+fi
+if [[ ! -e $DIR/solarized/dircolors ]]; then
+  echo '-> Dir colors ...'
+  git clone https://github.com/seebi/dircolors-solarized $DIR/solarized/dircolors
+fi
 if [[ ! -e $DIR/vim/bundle/vundle ]]; then
-  echo '-> Vundle...'
+  echo '-> Vundle ...'
   git clone https://github.com/gmarik/vundle.git $DIR/vim/bundle/vundle
 fi
-relink ~/.bash_profile      $DIR/bash_profile
-relink ~/.bashrc            $DIR/bashrc
-relink ~/.gitconfig         $DIR/gitconfig
-relink ~/.pip               $DIR/pip
-relink ~/.gitconfig         $DIR/gitconfig
-relink ~/.vimrc             $DIR/vim/vimrc
-relink ~/.vimrc.bundles     $DIR/vim/vimrc.bundles
-relink ~/.vim               $DIR/vim
-echo 'Vim plugins...'
-vim -u $DIR/vim/vimrc.bundles +BundleInstall +qall
+
+ln -fs $DIR/bash_profile   ~/.bash_profile
+ln -fs $DIR/bashrc         ~/.bashrc
+ln -fs $DIR/gitconfig      ~/.gitconfig
+ln -fs $DIR/pip            ~/.pip
+ln -fs $DIR/gitconfig      ~/.gitconfig
+ln -fs $DIR/vim/vimrc      ~/.vimrc
+ln -fs $DIR/vim            ~/.vim
