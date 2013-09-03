@@ -1,10 +1,12 @@
 # Dotfiles
 
+## Install
+
     $ sudo apt-get install git
     $ git clone git@github.com:copitux/dotfiles.git ~/.dotfiles
     $ ~/.dotfiles/install
 
-** Solarizing **
+## Solarizing
 
     $ slight
     $ sdark
