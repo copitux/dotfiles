@@ -19,3 +19,5 @@ tgz() {
 tbz() {
     tar -cjf $1.tar.bz2 ${*:2}
 }
+
+source ~/.dotfiles/solarized/alias.bash

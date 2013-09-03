@@ -3,7 +3,7 @@
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
 sudo apt-get update
-sudo apt-get install build-essential vim vim-gtk curl ack-grep guake aptitude
+sudo apt-get install build-essential vim vim-gtk curl ack-grep guake aptitude xclip
 
 echo 'Downloading requirements...'
 if [[ ! -e $DIR/bash_completion/django_admin ]]; then
@@ -26,11 +26,8 @@ if [[ ! -e $DIR/solarized/gnome ]]; then
 fi
 if [[ ! -e $DIR/solarized/dircolors ]]; then
   echo '-> Dir colors ...'
-  git clone https://github.com/seebi/dircolors-solarized $DIR/solarized/dircolors
-fi
-if [[ ! -e $DIR/vim/bundle/vundle ]]; then
-  echo '-> Vundle ...'
-  git clone https://github.com/gmarik/vundle.git $DIR/vim/bundle/vundle
+  git clone https://github.com/seebi/dircolors-solarized $DIR/solarized/dircolors-pack
+  ln -fs $DIR/solarized/dircolors-pack/dircolors.ansi-dark $DIR/solarized/dircolors
 fi
 
 ln -fs $DIR/bash_profile   ~/.bash_profile
@@ -38,5 +35,3 @@ ln -fs $DIR/bashrc         ~/.bashrc
 ln -fs $DIR/gitconfig      ~/.gitconfig
 ln -fs $DIR/pip            ~/.pip
 ln -fs $DIR/gitconfig      ~/.gitconfig
-ln -fs $DIR/vim/vimrc      ~/.vimrc
-ln -fs $DIR/vim            ~/.vim

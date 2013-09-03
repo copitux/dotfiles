@@ -14,4 +14,5 @@ fi
 . ~/.dotfiles/bookmarks.bash
 . ~/.dotfiles/alias.bash
 [[ -e ~/.dotfiles/git-prompt ]] && . ~/.dotfiles/git-prompt/gitprompt.sh
+[[ -e ~/.dotfiles/solarized/dircolors ]] && eval `dircolors ~/.dotfiles/solarized/dircolors`
 [[ -e ~/.bashrc.local ]] && . ~/.bashrc.local

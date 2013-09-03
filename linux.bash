@@ -33,3 +33,5 @@ saveiso() {
 makeiso() {
   genisoimage -l -R -J -o $1.iso $2
 }
+
+alias clip='xclip -sel clip'
