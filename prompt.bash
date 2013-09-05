@@ -12,9 +12,10 @@ COLOR_NONE="\[\033[0m\]"
 BRANCH_ICON='⎇ '
 VIRTUALENV_ICON='⚡'
 
-virtualenv() {
+virtualenv_name() {
   if [[ -n ${VIRTUAL_ENV} ]]; then
     echo "[${VIRTUALENV_ICON} ${YELLOW}$(basename $VIRTUAL_ENV)${COLOR_NONE}] "
   fi
 }
-PROMPT_COMMAND='__git_ps1 "$(virtualenv)" "${BLUE}\w${COLOR_NONE} \$ " "[${BRANCH_ICON} %s] "'
+
+PROMPT_COMMAND='__git_ps1 "$(virtualenv_name)" "${BLUE}\w${COLOR_NONE} \$ " "[${BRANCH_ICON} %s] "'

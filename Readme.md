@@ -10,3 +10,8 @@
 
     $ slight
     $ sdark
+
+## Fonts
+
+    $ git clone https://github.com/Lokaltog/powerline-fonts .fonts
+    $ fc-cache -vf .fonts

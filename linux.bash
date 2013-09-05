@@ -24,7 +24,5 @@ makeiso() {
   genisoimage -l -R -J -o $1.iso $2
 }
 
-export PATH=~/Apps:$PATH
-
 alias ls='ls --color=auto'
 alias clip='xclip -sel clip'
