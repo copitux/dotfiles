@@ -32,3 +32,5 @@ ln -fs $DIR/bashrc         ~/.bashrc
 ln -fs $DIR/gitconfig      ~/.gitconfig
 ln -fs $DIR/pip            ~/.pip
 ln -fs $DIR/gitconfig      ~/.gitconfig
+ln -fs $DIR/vim            ~/.vim
+ln -fs $DIR/vim/vimrc      ~/.vimrc
