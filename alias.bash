@@ -1,6 +1,6 @@
 alias ..='cd ..'
 alias ...='cd .. && cd ..'
-alias ...='cd .. && cd .. && cd ..'
+alias ....='cd .. && cd .. && cd ..'
 alias l="ls"
 alias la="ls -la"
 

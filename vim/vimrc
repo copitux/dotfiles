@@ -150,7 +150,7 @@ set wildignore+=*.pyc                            " Python byte code
 " Tabs, space and wrapping {{{
 
 set autoindent                 " set on the auto-indent
-set smartindent                " XXX: Python indent o () problems?
+set smartindent                " XXX: Python indent o () problems? It continues
 set expandtab                  " spaces instead of tabs
 set shiftwidth=4               " number of spaces for auto-indent
 set softtabstop=4              " a soft-tab of four spaces
@@ -320,6 +320,14 @@ so $HOME/.vim/file_types/python.vim
 so $HOME/.vim/file_types/vim.vim
 
 " End: FILETYPES }}}
+"
+" Other Customizations {{{ ====================================================
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+" }}}
 
 " vim:foldmethod=marker
 " vim:foldlevel=0

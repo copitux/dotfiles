@@ -1,4 +1,5 @@
 vim/bundle/*
+vim/tmp/
 pip/pip.log
 solarized/dircolors*
 solarized/gnome
