@@ -49,6 +49,8 @@ NeoBundle 'bling/vim-airline'                       " Pretty status line
 NeoBundle 'Shougo/unite.vim'                        " Unite. The interface to rule almost everything
 " NeoBundle 'Shougo/neocomplete.vim'                  " Auto completion solution
 NeoBundle 'Raimondi/delimitMate'                    " Auto completion for ([{' ...
+NeoBundle 'tomasr/molokai' " Molokai color scheme for Vim
+NeoBundle 'Rykka/riv.vim' "  reStructuredText in vim.
 
 " Colorschemes: jellybeans, solarized {{{
 
@@ -94,7 +96,7 @@ set ruler                                   " (x, y) of cursor at statusline
 set showcmd                                 " Show commands near statusline
 set title                                   " Set the terminal title to the current file
 set ttyfast                                 " better screen redraw
-set visualbell                              " turn on the visual bell
+set novisualbell                            " turn off the visual bell
 
 " End: Basic options }}}
 
