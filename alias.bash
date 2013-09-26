@@ -21,3 +21,4 @@ tbz() {
 }
 
 source ~/.dotfiles/solarized/alias.bash
+source ~/.dotfiles/apps/alias.bash

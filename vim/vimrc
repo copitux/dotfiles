@@ -317,6 +317,7 @@ map <Leader>z :ZoomWinTabToggle<CR>
 
 " FILETYPES {{{
 
+" TODO: Refact it with simple ftplugins
 so $HOME/.vim/file_types/html.vim
 so $HOME/.vim/file_types/python.vim
 so $HOME/.vim/file_types/vim.vim

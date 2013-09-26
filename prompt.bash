@@ -18,4 +18,18 @@ virtualenv_name() {
   fi
 }
 
-PROMPT_COMMAND='__git_ps1 "$(virtualenv_name)" "${BLUE}\w${COLOR_NONE} \$ " "[${BRANCH_ICON} %s] "'
+
+# Task prompt
+TASK_ICON='✍'
+WHITE="\[\033[1;37m\]"
+
+function task_count() {
+  TASKS="$(t | wc -l)"
+  if [ $TASKS -eq 0 ]; then
+    echo ''
+  else
+    echo "[${WHITE}${TASK_ICON} ${TASKS}${COLOR_NONE}] "
+  fi
+}
+
+PROMPT_COMMAND='__git_ps1 "$(task_count)$(virtualenv_name)" "${BLUE}\w${COLOR_NONE} \$ " "[${BRANCH_ICON} %s] "'

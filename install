@@ -26,6 +26,10 @@ if [[ ! -e $DIR/solarized/dircolors ]]; then
   git clone https://github.com/seebi/dircolors-solarized $DIR/solarized/dircolors-pack
   ln -fs $DIR/solarized/dircolors-pack/dircolors.ansi-dark $DIR/solarized/dircolors
 fi
+if [[ ! -e $DIR/apps/t ]]; then
+  echo '-> Task manager ...'
+  git clone https://github.com/sjl/t/ $DIR/apps/t
+fi
 
 ln -fs $DIR/bash_profile   ~/.bash_profile
 ln -fs $DIR/bashrc         ~/.bashrc
