@@ -152,7 +152,7 @@ set wildignore+=*.pyc                            " Python byte code
 " Tabs, space and wrapping {{{
 
 set autoindent                 " set on the auto-indent
-set smartindent                " XXX: Python indent o () problems? It continues
+set smartindent                " Smart indent on new lines, {, # and so on (C related)
 set expandtab                  " spaces instead of tabs
 set shiftwidth=4               " number of spaces for auto-indent
 set softtabstop=4              " a soft-tab of four spaces
@@ -315,15 +315,20 @@ map <Leader>z :ZoomWinTabToggle<CR>
 
 " End: PLUGINS setup }}}
 
-" FILETYPES {{{
+" AUTOCOMMAND {{{
 
-" TODO: Refact it with simple ftplugins
-so $HOME/.vim/file_types/html.vim
-so $HOME/.vim/file_types/python.vim
-so $HOME/.vim/file_types/vim.vim
+" General
 
-" End: FILETYPES }}}
-"
+au FocusLost * :wa
+
+" Html
+au BufRead,BufNewFile */templates/*.html setlocal filetype=htmldjango.html
+
+" Python
+au BufNewFile *.py so $HOME/.vim/file_headers/python.txt
+
+" End: AUTOCOMMAND }}}
+
 " Other Customizations {{{ ====================================================
 
 if filereadable(expand("~/.vimrc.local"))
