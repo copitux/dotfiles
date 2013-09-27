@@ -2,9 +2,6 @@
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
-sudo apt-get update
-sudo apt-get install build-essential vim vim-gtk curl ack-grep guake aptitude xclip
-
 echo 'Downloading requirements...'
 if [[ ! -e $DIR/bash_completion/django_admin ]]; then
   echo '-> django_admin completion ...'
