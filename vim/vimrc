@@ -208,7 +208,7 @@ vnoremap <Leader>s :sort!<CR>
 
 " Copy, cut and paste {{{
 
-set clipboard=unnamedplus,unnamed         " + register by default. XXX: Unix
+set clipboard=unnamedplus,unnamed         " + register by default
 map <Leader>p :set invpaste<CR>
 
 " End: Copy, cut and paste }}}
