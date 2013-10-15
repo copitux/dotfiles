@@ -38,7 +38,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Run on background
 NeoBundle 'Shougo/vimproc', {'build': {'unix': 'make -f make_unix.mak'}}
 " Zoom in and out windows splits
-NeoBundleLazy 'vim-scripts/zoomwintab.vim', {'autoload': {'commands': 'ZoomWinTabToggle'}}
+NeoBundleLazy 'vim-scripts/zoomwintab.vim', {'autoload': {'commands': 'ZoomWinTabIn'}}
 
 NeoBundle 'tpope/vim-surround'                      " Tpope must: surround
 NeoBundle 'tpope/vim-repeat'                        " Tpope must: . improved
@@ -47,7 +47,8 @@ NeoBundle 'scrooloose/syntastic'                    " Syntax checking
 NeoBundle 'kien/ctrlp.vim'                          " Fuzzy file search
 NeoBundle 'bling/vim-airline'                       " Pretty status line
 NeoBundle 'Shougo/unite.vim'                        " Unite. The interface to rule almost everything
-" NeoBundle 'Shougo/neocomplete.vim'                  " Auto completion solution
+NeoBundle 'Shougo/neocomplete.vim'                  " Auto completion solution
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Raimondi/delimitMate'                    " Auto completion for ([{' ...
 NeoBundle 'tomasr/molokai' " Molokai color scheme for Vim
 NeoBundle 'Rykka/riv.vim' "  reStructuredText in vim.
@@ -94,9 +95,10 @@ set listchars=tab:>-,trail:.,nbsp:.,eol:¬   " Highlight problematic whitespace
 set list                                    " shows hidden chars
 set ruler                                   " (x, y) of cursor at statusline
 set showcmd                                 " Show commands near statusline
-set title                                   " Set the terminal title to the current file
+" set title                                   " Set the terminal title to the current file. XXX: Bug with guake
 set ttyfast                                 " better screen redraw
 set novisualbell                            " turn off the visual bell
+set completeopt=menu,menuone                " options to completion menus
 
 " End: Basic options }}}
 
@@ -136,9 +138,9 @@ set smartcase                   " smart case ignore
 
 " }}}
 
-" Wildmenu {{{
+" Wildmenu: Command line autocompletion {{{
 
-set wildmenu                        " Command line autocompletion
+set wildmenu
 set wildmode=list:longest,full      " Shows all the options
 
 set wildignore+=*.sw?                            " Vim swap files
@@ -274,8 +276,8 @@ let g:syntastic_warning_symbol='⚠'
 
 " Commentary {{{
 
-nmap <Leader>c gcc
-xmap <Leader>c gc
+nmap <Leader>c <Plug>CommentaryLine
+xmap <Leader>c <Plug>Commentary
 
 augroup plugin_commentary
     au!
@@ -286,24 +288,50 @@ augroup END
 
 " }}}
 
-" Neocomplete {{{
+" Neocomplete and Neosnippet: With Tabs {{{
 
-" let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#enable_smart_case = 1
-" let g:neocomplete#enable_auto_select = 1
-" let g:neocomplete#enable_refresh_always = 1
-" let g:neocomplete#max_list = 30
-" let g:neocomplete#min_keyword_length = 2
-" let g:neocomplete#sources#syntax#min_keyword_length = 1
-" let g:neocomplete#data_directory = $HOME.'/.vim/tmp/neocomplete'
+" TAB select next on completion popup except it is a snippet, because second tab expand snippet
+" Select items complete the words
+" Gotcha: Can't select "next snippet" with TAB. Use C-N instead
 
-" Enable omni completion. XXX: See it
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#max_list = 30
+let g:neocomplete#min_keyword_length = 2
+let g:neocomplete#data_directory = $HOME.'/.vim/tmp/neocomplete'
+let g:neocomplete#enable_auto_select = 0  " Useful with TAB completion and oneword menu
+
+" Emulate <CR> as usual {{{
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#smart_close_popup() . "\<CR>"
+endfunction
+" }}}
+
+" Onmicomplete: css, html, markdown, javascript, python, ruby, xml {{{
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" }}}
+
+" <TAB> smart mapping {{{
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
+" }}}
+
+" TODO: Custom snippets
+" Enable snipMate compatibility feature.
+" let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+" let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " }}}
 
