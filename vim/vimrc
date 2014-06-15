@@ -62,7 +62,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 
 " XXX: To see it
 " python-mode: python motions
-" matchit and python_matchit
+NeoBundle 'vim-scripts/matchit.zip'
 " virtualenv
 
 " End: Plugins }}}

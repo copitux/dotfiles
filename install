@@ -14,7 +14,7 @@ if [[ ! -e $DIR/solarized/guake ]]; then
 fi
 if [[ ! -e $DIR/solarized/gnome ]]; then
   echo '-> Gnome colors ...'
-  git clone https://github.com/sigurdga/gnome-terminal-colors-solarized $DIR/solarized/gnome
+  git clone https://github.com/sigurdga/gnome-terminal-colors-solarized -b python-dev $DIR/solarized/gnome
   $DIR/solarized/gnome/install.sh -s dark -p Solarized
   $DIR/solarized/gnome/solarize dark
 fi
