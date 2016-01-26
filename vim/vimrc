@@ -27,7 +27,7 @@ endif
 if has('vim_starting')
   set rtp+=$HOME/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand($HOME.'/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -43,15 +43,24 @@ NeoBundleLazy 'vim-scripts/zoomwintab.vim', {'autoload': {'commands': 'ZoomWinTa
 NeoBundle 'tpope/vim-surround'                      " Tpope must: surround
 NeoBundle 'tpope/vim-repeat'                        " Tpope must: . improved
 NeoBundle 'tpope/vim-commentary'                    " Tpope must: comment code
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'                    " Syntax checking
 NeoBundle 'kien/ctrlp.vim'                          " Fuzzy file search
 NeoBundle 'bling/vim-airline'                       " Pretty status line
 NeoBundle 'Shougo/unite.vim'                        " Unite. The interface to rule almost everything
 NeoBundle 'Shougo/neocomplete.vim'                  " Auto completion solution
-NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Raimondi/delimitMate'                    " Auto completion for ([{' ...
 NeoBundle 'tomasr/molokai' " Molokai color scheme for Vim
 NeoBundle 'Rykka/riv.vim' "  reStructuredText in vim.
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'mileszs/ack.vim'
+NeoBundleCheck
+
+
 
 " Colorschemes: jellybeans, solarized {{{
 
@@ -70,6 +79,8 @@ NeoBundle 'vim-scripts/matchit.zip'
 NeoBundleCheck
 
 filetype plugin indent on      " Indent and plugins by filetype
+
+call neobundle#end()
 
 " End: NEOBUNDLE, plugin manager }}}
 
@@ -154,7 +165,7 @@ set wildignore+=*.pyc                            " Python byte code
 " Tabs, space and wrapping {{{
 
 set autoindent                 " set on the auto-indent
-set smartindent                " Smart indent on new lines, {, # and so on (C related)
+" set smartindent                " Smart indent on new lines, {, # and so on (C related)
 set expandtab                  " spaces instead of tabs
 set shiftwidth=4               " number of spaces for auto-indent
 set softtabstop=4              " a soft-tab of four spaces
@@ -203,6 +214,9 @@ nnoremap q: :q
 " Sort selected
 vnoremap <Leader>s :sort!<CR>
 
+nmap <leader>b :TagbarToggle<CR>
+nmap <leader>v Oimport ipdb; ipdb.set_trace()<ESC>
+
 " }}}
 
 " Folding. XXX: See it {{{
@@ -237,6 +251,12 @@ map <Leader>p :set invpaste<CR>
 
 " PLUGINS setup {{{
 
+" Tagbar {{{
+let g:tagbar_left = 1
+let g:tagbar_sort = 0
+
+" End: Tagbar }}}
+
 " Unite. XXX: See it {{{
 
 " End: Unite }}}
@@ -267,6 +287,7 @@ let g:airline_powerline_fonts=1
 " Syntastic {{{
 
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_style_error_symbol  = '⚡'
 let g:syntastic_style_warning_symbol  = '⚡'
@@ -319,19 +340,12 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " <TAB> smart mapping {{{
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)"
-  \: "\<TAB>"
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 " }}}
-
-" TODO: Custom snippets
-" Enable snipMate compatibility feature.
-" let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-" let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " }}}
 
@@ -354,6 +368,10 @@ au BufRead,BufNewFile */templates/*.html setlocal filetype=htmldjango.html
 
 " Python
 au BufNewFile *.py so $HOME/.vim/file_headers/python.txt
+au BufNewFile *.py so $HOME/.vim/file_headers/prism_header.txt
+
+" Js
+au BufNewFile *.js so $HOME/.vim/file_headers/prism_header_js.txt
 
 " End: AUTOCOMMAND }}}
 

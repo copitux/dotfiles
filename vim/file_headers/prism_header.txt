@@ -1,0 +1,7 @@
+:append
+"""
+Copyright (C) 2013 Prism Business Solutions Pte. Ltd. - All Rights Reserved
+You may not use, distribute or modify this code without the express written
+permission of Prism Business Solutions Pte. Ltd.
+"""
+
