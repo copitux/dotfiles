@@ -5,12 +5,7 @@ export EDITOR="vim"
 export GIT_EDITOR=$EDITOR
 set -o vi
 
-if [[ $OS = 'darwin' ]]; then
-  . ~/.dotfiles/mac.bash
-else
-  . ~/.dotfiles/linux.bash
-fi
-
+. ~/.dotfiles/linux.bash
 . ~/.dotfiles/bookmarks.bash
 . ~/.dotfiles/alias.bash
 . ~/.dotfiles/prompt.bash
