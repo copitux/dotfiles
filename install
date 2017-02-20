@@ -1,12 +1,26 @@
 #!/bin/bash
 
+
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
+sudo apt update
+sudo apt install git vim vim-gtk curl guake xclip build-essential ack-grep python-dev cmake
+
+echo 'Python things...'
+wget -c https://bootstrap.pypa.io/get-pip.py -P /tmp
+sudo python /tmp/get-pip.py
+sudo pip install virtualenvwrapper ipython ipdb httpie pyflakes jedi
+cp pip/flake8 ~/.config
+
+echo 'Go things...'
+wget -c https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz -P /tmp
+tar zxvf /tmp/go1.8.linux-amd64.tar.gz -C ~/.local/
+
+echo 'Misc things...'
+mkdir -p ~/Projects/go
+
+
 echo 'Downloading requirements...'
-if [[ ! -e $DIR/bash_completion/django_admin ]]; then
-  echo '-> django_admin completion ...'
-  curl -s 'https://raw.github.com/django/django/master/extras/django_bash_completion' > $DIR/bash_completion/django_admin
-fi
 if [[ ! -e $DIR/solarized/guake ]]; then
   echo '-> Guake colors ...'
   git clone https://github.com/coolwanglu/guake-colors-solarized.git $DIR/solarized/guake
@@ -35,3 +49,6 @@ ln -fs $DIR/pip            ~/.pip
 ln -fs $DIR/gitconfig      ~/.gitconfig
 ln -fs $DIR/vim            ~/.vim
 ln -fs $DIR/vim/vimrc      ~/.vimrc
+
+echo 'Reloading...'
+source ~/.bashrc

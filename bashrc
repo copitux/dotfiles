@@ -14,5 +14,6 @@ fi
 . ~/.dotfiles/bookmarks.bash
 . ~/.dotfiles/alias.bash
 . ~/.dotfiles/prompt.bash
+. ~/.dotfiles/go.bash
 [[ -e ~/.dotfiles/solarized/dircolors ]] && eval `dircolors ~/.dotfiles/solarized/dircolors`
 [[ -e ~/.bashrc.local ]] && . ~/.bashrc.local

@@ -58,6 +58,7 @@ NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'IN3D/vim-raml'
 NeoBundleCheck
 
 
@@ -316,10 +317,9 @@ au BufRead,BufNewFile */templates/*.html setlocal filetype=htmldjango.html
 
 " Python
 au BufNewFile *.py so $HOME/.vim/file_headers/python.txt
-au BufNewFile *.py so $HOME/.vim/file_headers/prism_header.txt
+au BufNewFile *.raml so $HOME/.vim/file_headers/raml.txt
 
 " Js
-au BufNewFile *.js so $HOME/.vim/file_headers/prism_header_js.txt
 
 " End: AUTOCOMMAND }}}
 

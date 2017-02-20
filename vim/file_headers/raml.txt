@@ -1,0 +1,4 @@
+:insert
+#%RAML 1.0
+
+
