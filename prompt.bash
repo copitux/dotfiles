@@ -21,7 +21,16 @@ virtualenv_name() {
 
 # Task prompt
 TASK_ICON='✍'
+GO_ICON='👻'
 WHITE="\[\033[1;37m\]"
+
+function go_path() {
+  if [[ $PWD == $GOPATH* ]]; then
+      echo "[${GO_ICON} Go] "
+  else
+      echo ""
+  fi
+}
 
 function task_count() {
   TASKS="$(t | wc -l)"
@@ -32,4 +41,4 @@ function task_count() {
   fi
 }
 
-PROMPT_COMMAND='__git_ps1 "$(task_count)$(virtualenv_name)" "${BLUE}\w${COLOR_NONE} \$ " "[${BRANCH_ICON} %s] "'
+PROMPT_COMMAND='__git_ps1 "$(task_count)$(virtualenv_name)$(go_path)" "${BLUE}\w${COLOR_NONE} \$ " "[${BRANCH_ICON} %s] "'

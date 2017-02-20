@@ -1,8 +1,7 @@
 alias ..='cd ..'
 alias ...='cd .. && cd ..'
 alias ....='cd .. && cd .. && cd ..'
-alias l="ls"
-alias la="ls -la"
+alias l="ls -la"
 
 mkpymod() {
   mkdir $1
@@ -20,5 +19,4 @@ tbz() {
     tar -cjf $1.tar.bz2 ${*:2}
 }
 
-source ~/.dotfiles/solarized/alias.bash
-source ~/.dotfiles/apps/alias.bash
+alias t='python ~/.dotfiles/apps/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
