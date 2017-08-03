@@ -7,22 +7,13 @@ do
   . $completion
 done
 
-# Virtualenv
+# Python virtualenv
 if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
   . /usr/local/bin/virtualenvwrapper.sh 
 fi
 
-# Alias
-joinvideo() {
-  # joinvideo out.avi uno.avi dos.avi ...
-  mencoder -ovc copy -oac copy -o $*
-}
-saveiso() {
-  wodim -v -eject dev=/dev/sg0 $*
-}
-makeiso() {
-  genisoimage -l -R -J -o $1.iso $2
-}
+# Linuxbrew
+export PATH="~/.linuxbrew/bin:$PATH"
+export MANPATH="~/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="~/.linuxbrew/share/info:$INFOPATH"
 
-alias ls='ls --color=auto'
-alias clip='xclip -sel clip'

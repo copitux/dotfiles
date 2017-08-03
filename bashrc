@@ -6,8 +6,8 @@ export GIT_EDITOR=$EDITOR
 set -o vi
 
 . ~/.dotfiles/linux.bash
-. ~/.dotfiles/bookmarks.bash
 . ~/.dotfiles/alias.bash
+. ~/.dotfiles/bookmarks.bash
 . ~/.dotfiles/prompt.bash
 . ~/.dotfiles/go.bash
 [[ -e ~/.dotfiles/solarized/dircolors ]] && eval `dircolors ~/.dotfiles/solarized/dircolors`

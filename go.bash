@@ -1,3 +1,11 @@
-export GOROOT=~/.local/go
-export GOPATH=~/Projects/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOPATH=~/Projects/.go
+
+genv() {
+  export GOPATH=`pwd`
+}
+
+gf() {
+  go fmt ./...
+}
+
+
