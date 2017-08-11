@@ -11,9 +11,3 @@ done
 if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
   . /usr/local/bin/virtualenvwrapper.sh 
 fi
-
-# Linuxbrew
-export PATH="~/.linuxbrew/bin:$PATH"
-export MANPATH="~/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="~/.linuxbrew/share/info:$INFOPATH"
-
